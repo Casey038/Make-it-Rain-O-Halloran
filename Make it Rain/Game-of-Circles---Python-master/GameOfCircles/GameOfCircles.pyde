@@ -4,6 +4,8 @@ from Enemy import Enemy
 from Raindrop import Raindrop
 from Player import Player
 from SpriteManager import sprites
+from ScreensaverBot import ScreensaverBot
+from JiggleBot import JiggleBot
 #butt
 
 def setup():
@@ -36,6 +38,8 @@ def setup():
     sprites.append(Raindrop(250, 80, enemyTeam))
     sprites.append(Raindrop(230, 80, enemyTeam))
     sprites.append(Raindrop(220, 80, enemyTeam))
+    sprites.append(JiggleBot(100, 80, enemyTeam))
+    sprites.append(ScreensaverBot(200, 40, enemyTeam))
     
                            
 def draw():
