@@ -13,6 +13,13 @@ class Bullet:
         self.x += self.vector.x
         self.y += self.vector.y
         
+    #def destroy(self):
+        #if self.x > width
+        #if self.x < width
+        #if self.y > height
+        #if self.y< height
+        #destroyed.append(self)
+        
     def display(self):
         fill(self.c)
         ellipse(self.x, self.y, self.diameter, self.diameter)
@@ -20,3 +27,5 @@ class Bullet:
     def animate(self):
         self.move()
         self.display()
+    
+    

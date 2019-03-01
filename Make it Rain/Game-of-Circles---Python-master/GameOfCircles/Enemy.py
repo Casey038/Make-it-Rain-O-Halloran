@@ -1,6 +1,7 @@
 import SpriteManager
 from Bullet import Bullet
 class Enemy:
+
     
     speed = 8
     diameter = 50
@@ -15,6 +16,9 @@ class Enemy:
         self.x += self.speed
         if self.x < 0 or self.x > width:
             self.speed *= -1
+            
+        vector = self.aim(SpriteManager.getPlayer())
+        self.fire(vector)
         
     def display(self):
         fill(self.c)
@@ -26,7 +30,14 @@ class Enemy:
         
     def aim(self, target) :
         #solve unit vector problem too
+        xdist = self.x - target.x
+        ydist = self.y - target.y
+        d = ((xdist)**2 + (ydist)**2)**.5
+        xVec = xdist/d
+        yVec = ydist/d
+        return PVector(xVec, yVec)
         return PVector(0, 10)
+        
         
                    
     def fire(self, vector):
