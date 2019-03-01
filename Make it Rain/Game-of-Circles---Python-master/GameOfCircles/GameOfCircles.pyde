@@ -6,6 +6,8 @@ from Player import Player
 from SpriteManager import sprites
 from ScreensaverBot import ScreensaverBot
 from JiggleBot import JiggleBot
+#from Lobber import Lobber
+import SpriteManager
 #butt
 
 def setup():
@@ -15,31 +17,33 @@ def setup():
     size(500, 500)
     playerTeam = 1
     enemyTeam = 2
-    player = Player(width/2, height/2, playerTeam)
-    
-    sprites.append(player)
-    sprites.append(Enemy(50, 50, enemyTeam))
-    sprites.append(Enemy(150, 150, enemyTeam))
-    sprites.append(Raindrop(70, 80, enemyTeam))
-    sprites.append(Raindrop(100, 80, enemyTeam))
-    sprites.append(Raindrop(90, 80, enemyTeam))
-    sprites.append(Raindrop(110, 80, enemyTeam))
-    sprites.append(Raindrop(140, 80, enemyTeam))
-    sprites.append(Raindrop(160, 80, enemyTeam))
-    sprites.append(Raindrop(150, 80, enemyTeam))
-    sprites.append(Raindrop(130, 80, enemyTeam))
-    sprites.append(Raindrop(220, 80, enemyTeam))
-    sprites.append(Raindrop(20, 80, enemyTeam))
-    sprites.append(Raindrop(200, 80, enemyTeam))
-    sprites.append(Raindrop(20, 80, enemyTeam))
-    sprites.append(Raindrop(210, 80, enemyTeam))
-    sprites.append(Raindrop(240, 80, enemyTeam))
-    sprites.append(Raindrop(260, 80, enemyTeam))
-    sprites.append(Raindrop(250, 80, enemyTeam))
-    sprites.append(Raindrop(230, 80, enemyTeam))
-    sprites.append(Raindrop(220, 80, enemyTeam))
-    sprites.append(JiggleBot(100, 80, enemyTeam))
-    sprites.append(ScreensaverBot(200, 40, enemyTeam))
+    player = Player(width, height, playerTeam)
+    SpriteManager.setPlayer(player)
+    SpriteManager.spawn(JiggleBot(200, 50, 2))
+    SpriteManager.spawn(Enemy(300, 100, 2))
+    #sprites.append(player)
+    #sprites.append(Enemy(50, 50, enemyTeam))
+    #sprites.append(Enemy(150, 150, enemyTeam))
+    #sprites.append(Raindrop(70, 80, enemyTeam))
+    #sprites.append(Raindrop(100, 80, enemyTeam))
+    #sprites.append(Raindrop(90, 80, enemyTeam))
+    #sprites.append(Raindrop(110, 80, enemyTeam))
+    #sprites.append(Raindrop(140, 80, enemyTeam))
+    #sprites.append(Raindrop(160, 80, enemyTeam))
+    #sprites.append(Raindrop(150, 80, enemyTeam))
+    #sprites.append(Raindrop(130, 80, enemyTeam))
+    #sprites.append(Raindrop(220, 80, enemyTeam))
+    #sprites.append(Raindrop(20, 80, enemyTeam))
+    #sprites.append(Raindrop(200, 80, enemyTeam))
+    #sprites.append(Raindrop(20, 80, enemyTeam))
+    #sprites.append(Raindrop(210, 80, enemyTeam))
+    #sprites.append(Raindrop(240, 80, enemyTeam))
+    #sprites.append(Raindrop(260, 80, enemyTeam))
+    #sprites.append(Raindrop(250, 80, enemyTeam))
+    #sprites.append(Raindrop(230, 80, enemyTeam))
+    #sprites.append(Raindrop(220, 80, enemyTeam))
+    #sprites.append(JiggleBot(100, 80, enemyTeam))
+    #sprites.append(ScreensaverBot(200, 40, enemyTeam))
     
                            
 def draw():

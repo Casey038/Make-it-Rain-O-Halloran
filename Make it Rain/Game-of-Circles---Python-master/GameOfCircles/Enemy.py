@@ -1,3 +1,5 @@
+import SpriteManager
+from Bullet import Bullet
 class Enemy:
     
     speed = 8
@@ -21,3 +23,11 @@ class Enemy:
     def animate(self):
         self.move()
         self.display()
+        
+    def aim(self, target) :
+        #solve unit vector problem too
+        return PVector(0, 10)
+        
+                   
+    def fire(self, vector):
+        SpriteManager.spawn(Bullet(self.x, self.y, vector, self.team))
