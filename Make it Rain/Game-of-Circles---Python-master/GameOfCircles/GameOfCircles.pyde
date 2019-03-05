@@ -21,8 +21,8 @@ def setup():
     enemyTeam = 2
     player = Player(width, height, playerTeam)
     SpriteManager.setPlayer(player)
-    SpriteManager.spawn(JiggleBot(200, 50, 2))
-    SpriteManager.spawn(Enemy(300, 100, 2))
+    SpriteManager.spawn(JiggleBot(200, 50, enemyTeam))
+    SpriteManager.spawn(Enemy(300, 100, enemyTeam))
     #sprites.append(player)
     #sprites.append(Enemy(50, 50, enemyTeam))
     #sprites.append(Enemy(150, 150, enemyTeam))
@@ -58,17 +58,17 @@ def draw():
         
     #checkCollisions()
     
-#def checkCollisions():
-    #global sprites
-    #for a in sprites:
-       # for b in sprites:
-            #if a.team != b.team:
-                #d = (pow(a.x - b.x, 2) + pow(a.y - b.y, 2))**(0.5)
-               # r1 = a.diameter / 2
-                #r2 = b.diameter / 2
-                #if(r1 + r2 > d):
-                    #sprites.remove(a)
-                    #sprites.remove(b)
+def checkCollisions():
+    global sprites
+    for a in sprites:
+        for b in sprites:
+            if a.team != b.team:
+                d = (pow(a.x - b.x, 2) + pow(a.y - b.y, 2))**(0.5)
+                r1 = a.diameter / 2
+                r2 = b.diameter / 2
+                if(r1 + r2 > d):
+                    sprites.remove(a)
+                    sprites.remove(b)
     
 def keyPressed():
     global player

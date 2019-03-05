@@ -37,4 +37,4 @@ def checkCollisions():
 def bringOutYerDead():
     for sprite in destroyed:
         sprites.remove(sprite)
-        destroed.remove(sprite)
+        destroyed.remove(sprite)
