@@ -8,6 +8,8 @@ from ScreensaverBot import ScreensaverBot
 from JiggleBot import JiggleBot
 #from Lobber import Lobber
 import SpriteManager
+mark = 0
+wait = 1000
 #butt
 
 def setup():
@@ -48,7 +50,8 @@ def setup():
                            
 def draw():
     global player, sprites
-    background(255)    
+    background(255)
+    
 
     for sprite in sprites:
         sprite.animate()

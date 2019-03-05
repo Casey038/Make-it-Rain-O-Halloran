@@ -1,7 +1,10 @@
+mark = 0
+wait = 1000
+go = True
+
 import SpriteManager
 from Bullet import Bullet
 class Enemy:
-
     
     speed = 8
     diameter = 50
@@ -29,16 +32,24 @@ class Enemy:
         self.display()
         
     def aim(self, target) :
+        global go, mark, wait
         #solve unit vector problem too
-        xdist = self.x - target.x
-        ydist = self.y - target.y
-        d = ((xdist)**2 + (ydist)**2)**.5
-        xVec = xdist/d
-        yVec = ydist/d
+        xdist = target.x - self.x
+        ydist = target.y - self.y
+        d = (((xdist)**2 + (ydist)**2))**.5
+        xVec = xdist/2 * .1
+        yVec = ydist/2 * .1
         return PVector(xVec, yVec)
         return PVector(0, 10)
-        
+
         
                    
     def fire(self, vector):
-        SpriteManager.spawn(Bullet(self.x, self.y, vector, self.team))
+        global go, mark, wait
+        
+        if(millis() - mark > wait):
+            go = not go
+            mark = millis()
+        if(go):
+            SpriteManager.spawn(Bullet(self.x, self.y, vector, self.team))
+    
