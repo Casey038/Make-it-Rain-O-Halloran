@@ -56,7 +56,7 @@ def draw():
     for sprite in sprites:
         sprite.animate()
         
-    #checkCollisions()
+    checkCollisions()
     
 def checkCollisions():
     global sprites

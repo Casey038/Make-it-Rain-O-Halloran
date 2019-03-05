@@ -1,7 +1,8 @@
+from Sprite import Sprite
 from SpriteManager import sprites
 from Bullet import Bullet
 
-class Player:
+class Player(Sprite):
     
     # instance variables
     left = False
@@ -11,12 +12,6 @@ class Player:
     speed = 5
     diameter = 50
     c = color(255,0,0)
-    
-    # constructor
-    def __init__(self, x, y, team):
-        self.x = x
-        self.y = y
-        self.team = team
         
     # instance methods
     def display(self):
@@ -35,9 +30,6 @@ class Player:
         self.x = constrain(self.x, self.diameter / 2, width - self.diameter / 2)
         self.y = constrain(self.y, self.diameter / 2, height - self.diameter / 2)
     
-    def animate(self):
-        self.display()
-        self.move()
         
     def fire(self):
         print("FIRE")
