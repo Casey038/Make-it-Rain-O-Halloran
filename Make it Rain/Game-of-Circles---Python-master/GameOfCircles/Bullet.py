@@ -1,6 +1,6 @@
 class Bullet:
     
-    diameter = 10
+    diameter = 15
     c = color(0)
     
     def __init__(self, x, y, vector, team):

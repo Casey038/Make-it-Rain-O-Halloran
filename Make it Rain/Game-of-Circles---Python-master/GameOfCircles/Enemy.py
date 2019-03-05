@@ -51,5 +51,6 @@ class Enemy:
             go = not go
             mark = millis()
         if(go):
+            go = False
             SpriteManager.spawn(Bullet(self.x, self.y, vector, self.team))
     
