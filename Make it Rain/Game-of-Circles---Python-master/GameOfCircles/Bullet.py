@@ -1,4 +1,4 @@
-#import SpriteManager
+import SpriteManager
 from Sprite import Sprite
 class Bullet(Sprite):
 

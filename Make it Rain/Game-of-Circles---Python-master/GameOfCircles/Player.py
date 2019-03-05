@@ -30,6 +30,8 @@ class Player(Sprite):
         self.x = constrain(self.x, self.diameter / 2, width - self.diameter / 2)
         self.y = constrain(self.y, self.diameter / 2, height - self.diameter / 2)
     
+    def handleCollision(self):
+        pass
         
     def fire(self):
         print("FIRE")
