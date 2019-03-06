@@ -1,5 +1,5 @@
+import SpriteManager
 from Sprite import Sprite
-from SpriteManager import sprites
 from Bullet import Bullet
 
 class Player(Sprite):
@@ -32,13 +32,14 @@ class Player(Sprite):
     
     def handleCollision(self):
         pass
+        #SpriteManager.destoy(self)
         
     def fire(self):
         print("FIRE")
         
     def keyDown(self):
         if key == 'f' or key == 'F':
-            sprites.append(Bullet(self.x, self.y, PVector(0, -10), self.team))
+            SpriteManager.spawn(Bullet(self.x, self.y, PVector(0, -10), self.team))
     
         if keyCode == LEFT:
             self.left = True
