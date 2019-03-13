@@ -26,13 +26,14 @@ def animate():
     bringOutYerDead()
     
 def checkCollisions():
+    global stork
     for i in range(0, len(sprites)):
         for j in range(i + 1, len(sprites)):
             a = sprites[i]
             b = sprites [j]
             if a.team!= b.team and a.isColliding(b):
-                sprites[i].handleCollision()
-                sprites[j].handleCollision()
+                a.handleCollision()
+                b.handleCollision()
                 
 def bringOutYerDead():
     for sprite in destroyed:

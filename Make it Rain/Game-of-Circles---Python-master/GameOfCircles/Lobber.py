@@ -6,3 +6,5 @@ class Lobber(Sprite):
     diameter = 50
     c = color(0,0,255)
     def aim():
+        
+    

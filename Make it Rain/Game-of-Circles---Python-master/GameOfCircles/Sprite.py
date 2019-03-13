@@ -1,3 +1,5 @@
+stork = 7
+
 import SpriteManager
 class Sprite(object):
     team = 2
@@ -13,7 +15,9 @@ class Sprite(object):
         pass
         
     def display(self):
+        global stork
         fill(self.c)
+        strokeWeight(stork)
         ellipse(self.x, self.y, self.diameter, self.diameter)
         
     def animate(self):
@@ -24,6 +28,7 @@ class Sprite(object):
         r1 = self.diameter / 2.0
         r2 = other.diameter / 2.0
         return r1 + r2 > dist(self.x, self.y, other.x, other.y)
+    
     
     def handleCollision(self):
         SpriteManager.destroy(self)

@@ -1,4 +1,6 @@
+stork = 7
 from Sprite import Sprite
+import SpriteManager
 class JiggleBot(Sprite):
     
     xspeed = 5
@@ -20,3 +22,9 @@ class JiggleBot(Sprite):
     def animate(self):
         self.move()
         self.display()
+        
+    def handleCollision(self):
+        global stork
+        stork -= 1
+        if stork == 0:
+            SpriteManager.destroy(self)

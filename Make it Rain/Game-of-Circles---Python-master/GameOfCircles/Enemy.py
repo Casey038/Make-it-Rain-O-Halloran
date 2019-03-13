@@ -1,6 +1,7 @@
 mark = 0
 wait = 1000
 go = True
+stork = 7
 
 import SpriteManager
 from Sprite import Sprite
@@ -9,12 +10,8 @@ class Enemy(Sprite):
     
     speed = 8
     diameter = 50
+    #strokeWeight(5)
     c = color(0,0,255)
-    
-    #def __init__(self, x, y, team):
-        #self.x = x
-        #self.y = y
-        #self.team = team
         
     def move(self):
         self.x += self.speed
@@ -46,4 +43,11 @@ class Enemy(Sprite):
         if(go):
             go = False
             SpriteManager.spawn(Bullet(self.x, self.y, vector, self.team))
+            
+    def handleCollision(self):
+        global stork
+        stork -= 1
+        if stork == 0:
+            SpriteManager.destroy(self)
+            
     
