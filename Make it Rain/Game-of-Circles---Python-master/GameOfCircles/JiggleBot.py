@@ -23,8 +23,8 @@ class JiggleBot(Sprite):
         self.move()
         self.display()
         
-    def handleCollision(self):
-        global stork
-        stork -= 1
-        if stork == 0:
-            SpriteManager.destroy(self)
+    #def handleCollision(self):
+        #global stork
+        #stork -= 1
+        #if stork == 0:
+            #SpriteManager.destroy(self)

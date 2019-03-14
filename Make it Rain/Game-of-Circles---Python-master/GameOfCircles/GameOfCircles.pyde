@@ -1,11 +1,11 @@
 import platform
 from Bullet import Bullet
 from Enemy import Enemy
-from Shooter import Shooter
 from Raindrop import Raindrop
 from Player import Player
 from ScreensaverBot import ScreensaverBot
 from JiggleBot import JiggleBot
+from Armored import Armored
 #from Lobber import Lobber
 import SpriteManager
 

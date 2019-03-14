@@ -1,4 +1,3 @@
-stork = 7
 
 import SpriteManager
 class Sprite(object):
@@ -15,9 +14,7 @@ class Sprite(object):
         pass
         
     def display(self):
-        global stork
         fill(self.c)
-        strokeWeight(stork)
         ellipse(self.x, self.y, self.diameter, self.diameter)
         
     def animate(self):

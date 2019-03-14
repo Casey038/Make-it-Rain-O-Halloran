@@ -1,7 +1,6 @@
 import SpriteManager
 from Sprite import Sprite
 from Bullet import Bullet
-stork = 7
 
 class Player(Sprite):
     
@@ -17,7 +16,6 @@ class Player(Sprite):
     # instance methods
     def display(self):
         fill(self.c)
-        strokeWeight(stork)
         ellipse(self.x, self.y, self.diameter, self.diameter)
         
     def move(self):
@@ -32,8 +30,8 @@ class Player(Sprite):
         self.x = constrain(self.x, self.diameter / 2, width - self.diameter / 2)
         self.y = constrain(self.y, self.diameter / 2, height - self.diameter / 2)
     
-    #def handleCollision(self):
-        #pass
+    def handleCollision(self):
+        pass
         #SpriteManager.destoy(self)
         
     def fire(self):
